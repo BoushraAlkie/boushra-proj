@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/pics/akona.jpg";
 import "../App.css";
 
+
 function Hero() {
   return (
     <div className="hero-container">
