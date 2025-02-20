@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import "../App.css";
 
 function AboutMe() {
@@ -7,8 +8,8 @@ function AboutMe() {
       <header className="hero-header">
         <div className="logo">B.A.</div>
         <nav className="hero-nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
+          <Link to="/" className="nav-link">Home</Link> {/* Redirects to Hero */}
+          <Link to="/about" className="nav-link">About</Link>
           <a href="#skills">Skills</a>
           <a href="#works">Works</a>
           <a href="#contacts">Contacts</a>
@@ -21,9 +22,8 @@ function AboutMe() {
           Hello! I am an aspiring <span className="highlight">Graphic Designer</span>, an undergraduate student of
           <span className="highlight"> Information Technology</span> at WMSU. My interests include branding, digital illustration, and UI/UX design. 
           I enjoy exploring new design trends and experimenting with different styles to enhance my creative approach.
-           My goal is to continuously improve my skills and contribute to projects that inspire, engage, and make a meaningful impact.
+          My goal is to continuously improve my skills and contribute to projects that inspire, engage, and make a meaningful impact.
         </p>
-        
       </div> 
     </div>
   );

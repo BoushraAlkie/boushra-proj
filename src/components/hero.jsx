@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import logo from "../assets/pics/akona.jpg";
 import "../App.css";
-
 
 function Hero() {
   return (
@@ -10,7 +10,7 @@ function Hero() {
         <div className="logo">B.A.</div>
         <nav className="hero-nav">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
+          <Link to="/about" className="nav-link">About</Link> {/* Updated to use Link */}
           <a href="#skills">Skills</a>
           <a href="#works">Works</a>
           <a href="#contacts">Contacts</a>
@@ -30,11 +30,7 @@ function Hero() {
         </div>
 
         <div className="hero-image">
-          <img
-            src={logo}
-            alt="Boushra Alkie"
-            className="profile-pic"
-          />
+          <img src={logo} alt="Boushra Alkie" className="profile-pic" />
         </div>
       </div>
     </div>
