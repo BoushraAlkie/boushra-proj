@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 import logo from "../assets/pics/akona.jpg";
 import "../App.css";
 
@@ -10,7 +10,7 @@ function Hero() {
         <div className="logo">B.A.</div>
         <nav className="hero-nav">
           <a href="#home">Home</a>
-          <Link to="/about" className="nav-link">About</Link> {/* Updated to use Link */}
+          <Link to="/about" className="nav-link">About</Link>
           <a href="#skills">Skills</a>
           <a href="#works">Works</a>
           <a href="#contacts">Contacts</a>

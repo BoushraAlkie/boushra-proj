@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 import "../App.css";
 
 function AboutMe() {
@@ -8,7 +8,7 @@ function AboutMe() {
       <header className="hero-header">
         <div className="logo">B.A.</div>
         <nav className="hero-nav">
-          <Link to="/" className="nav-link">Home</Link> {/* Redirects to Hero */}
+          <Link to="/" className="nav-link">Home</Link>
           <Link to="/about" className="nav-link">About</Link>
           <a href="#skills">Skills</a>
           <a href="#works">Works</a>
