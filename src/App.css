@@ -22,6 +22,7 @@ html, body {
   font-weight: bold;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -29,6 +30,10 @@ html, body {
   margin-left: 40px;
   color: #4B3832;
   font-size: 1.5rem;
+}
+
+.hero-nav {
+  display: flex;
 }
 
 .hero-nav a {
@@ -54,6 +59,16 @@ html, body {
 
 .hero-nav a:hover::after {
   width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #4B3832;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
 }
 
 .hero-content {
@@ -133,25 +148,269 @@ html, body {
   transform: scale(1.05);
 }
 
-h1 {
+h1, p {
   color: #4B3832;
 }
 
-p {
-  color: #4B3832;
+
+.hero-nav {
+  display: flex;
+  gap: 20px;
 }
+
+
+.hamburger-menu {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 100;
+}
+
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #f7e7ce;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+
+.hero-nav {
+  display: flex;
+  gap: 20px;
+}
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+
+.hero-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #bea493;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  padding: 12px;
+}
+
+.hero-nav.open {
+  display: flex;
+}
+
+.hero-nav a {
+  margin: 12px 0;
+  text-align: center;
+  display: block;
+}
+
+
+@media (max-width: 780px) {
+  .hero-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 57px;
+    padding-top: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body, html {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .hero-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 100px;
+    margin-top: 0px;
+  }
+
+  .hero-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #bea493;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    padding: 12px;
+  }
+
+  .hero-nav.open {
+    display: flex;
+  }
+
+  .hero-nav a {
+    margin: 12px 0;
+    text-align: center;
+    display: block;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 85%;
+  }
+
+  .profile-pic {
+    max-width: 300px;
+    height: 280px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero-container {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+
+  .hero-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .logo {
+    margin-left: 60px; 
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 22px;
+    margin-left: auto; 
+    margin-right: 30px;
+    margin-top: -12px;
+}
+
+
+  .hero-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    background-color: #bea493;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 140px;
+    padding: 10px;
+  }
+
+  .hero-nav.open {
+    display: flex;
+  }
+
+  .hero-nav a {
+    margin: 10px 0;
+    text-align: center;
+    display: block;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    width: 85%;
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .hero-text {
+    width: 90%;
+  }
+
+  .profile-pic {
+    max-width: 250px;
+    margin-top: -40px; 
+  }
+  
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .btn-vm {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+}
+
+
 
 .about-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 84%;
-  width: 97.2%;
-  margin-top: 22px;
-  margin-bottom: 20px;
-  background-color: #f7e7ce;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
+  background-color: #f7e7ce;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -159,31 +418,6 @@ p {
   color: #4B3832;
   animation: fadeInUp 1.5s ease-in-out;
 }
-
-.about-title {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 10px;
-  text-align: center;
-  animation: slideInLeft 1s ease-in-out;
-}
-
-.about-text {
-  color: #555;
-  font-size: 1.2rem;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  text-align: center;
-  max-width: 600px;
-  animation: slideInRight 1s ease-in-out;
-}
-
-.highlight {
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  color: #4B3832;
-}
-
 
 @keyframes fadeIn {
   from {
@@ -227,166 +461,76 @@ p {
   }
 }
 
-
-@media (max-width: 1200px) {
-  .hero-container {
-    width: 95vw;
-  }
-
-  .hero-content {
-    width: 95%;
-  }
-
+@media (max-width: 780px) {
   .about-container {
-    width: 95%;
-  }
-}
-
-@media (max-width: 992px) {
-  .hero-container {
-    height: auto;
-    padding: 15px;
-  }
-
-  .hero-header {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 0;
+    width: 80%;
+    padding: 18px;
+    padding-right: 30px;
+    margin-top: 40px;
+    font-size: 1rem;
+    margin-left: 0; 
+    align-self: flex-start; 
   }
 
-  .logo {
-    margin-left: 20px;
-    margin-bottom: 10px;
-  }
-
-  .hero-nav {
-    margin-top: 10px;
-  }
-
-  .hero-nav a {
-    margin: 10px;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-  }
-
-  .hero-text {
-    padding: 15px;
-    text-align: center;
-  }
-
-  .hero-image {
-    margin-top: 20px;
-  }
-
-  .profile-pic {
-    max-width: 350px;
-  }
-
-  .about-container {
-    height: auto;
-    padding: 15px;
+  .about-title {
+    font-size: 1.8rem;
   }
 
   .about-text {
     font-size: 1.1rem;
+    max-width: 500px;
   }
 }
 
-@media (max-width: 768px) {
-  .hero-container {
-    padding: 10px;
+
+@media (max-width: 480px) {
+  .hero-headerr {
+    position: fixed; 
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
   }
 
-  .hero-content {
-    padding: 10px;
+  .logoo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 20px; 
   }
 
-  .hero-text {
-    padding: 10px;
+  .hamburgerr {
+    display: block;
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 50px; 
   }
-
-  .profile-pic {
-    max-width: 300px;
-  }
-
   .about-container {
-    padding: 10px;
+    width: 90%;
+    padding: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .about-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 8px; 
   }
 
   .about-text {
     font-size: 1rem;
+    max-width: 400px;
+    line-height: 1.5;
   }
 }
 
-@media (max-width: 576px) {
-  .hero-container {
-    width: 100vw;
-    padding: 10px;
-  }
 
-  .hero-content {
-    width: 100%;
-    padding: 10px;
-  }
 
-  .hero-text {
-    padding: 10px;
-  }
-
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .description {
-    font-size: 0.9rem;
-  }
-
-  .btn-vm {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-  }
-
-  .profile-pic {
-    max-width: 250px;
-  }
-
-  .about-container {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .about-title {
-    font-size: 1.75rem;
-  }
-
-  .about-text {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .description {
-    font-size: 0.85rem;
-  }
-
-  .btn-vm {
-    font-size: 0.75rem;
-    padding: 6px 12px;
-  }
-
-  .about-title {
-    font-size: 1.5rem;
-  }
-
-  .about-text {
-    font-size: 0.85rem;
-  }
-}

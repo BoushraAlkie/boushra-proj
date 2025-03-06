@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/pics/akona.jpg";
 import "../App.css";
+import { FaBars, FaTimes } from "react-icons/fa"; 
 
 function Hero() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="hero-container">
       <header className="hero-header">
         <div className="logo">B.A.</div>
-        <nav className="hero-nav">
-          <a href="#home">Home</a>
-          <Link to="/about" className="nav-link">About</Link>
-          <a href="#skills">Skills</a>
-          <a href="#works">Works</a>
-          <a href="#contacts">Contacts</a>
+
+     
+        <div className="hamburger" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
+      
+        <nav className={menuOpen ? "hero-nav open" : "hero-nav"}>
+          <a href="#home" onClick={toggleMenu}>Home</a>
+          <Link to="/about" className="nav-link" onClick={toggleMenu}>About</Link>
+          <a href="#skills" onClick={toggleMenu}>Skills</a>
+          <a href="#works" onClick={toggleMenu}>Works</a>
+          <a href="#contacts" onClick={toggleMenu}>Contacts</a>
         </nav>
       </header>
 
