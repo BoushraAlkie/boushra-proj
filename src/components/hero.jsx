@@ -16,18 +16,17 @@ function Hero() {
       <header className="hero-header">
         <div className="logo">B.A.</div>
 
-     
         <div className="hamburger" onClick={toggleMenu}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
 
-      
         <nav className={menuOpen ? "hero-nav open" : "hero-nav"}>
-          <a href="#home" onClick={toggleMenu}>Home</a>
-          <Link to="/about" className="nav-link" onClick={toggleMenu}>About</Link>
-          <a href="#skills" onClick={toggleMenu}>Skills</a>
-          <a href="#works" onClick={toggleMenu}>Works</a>
-          <a href="#contacts" onClick={toggleMenu}>Contacts</a>
+          <Link to="/" onClick={toggleMenu}>Home</Link>
+          <Link to="/about" onClick={toggleMenu}>About</Link>
+          <Link to="/blog" onClick={toggleMenu}>Blog</Link>
+          <Link to="/experience" onClick={toggleMenu}>Experience</Link>
+          <Link to="/projects" onClick={toggleMenu}>Projects</Link>
+          <Link to="/contact" onClick={toggleMenu}>Contact</Link>
         </nav>
       </header>
 
