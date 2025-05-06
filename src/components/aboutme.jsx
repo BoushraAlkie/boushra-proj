@@ -26,9 +26,52 @@ function AboutMe() {
       name: "Civil Service Professional", 
       year: "2024", 
       icon: <FaUserGraduate />,
+      image: "/certs/boushcsc.jpg",
       description: "Government certification for professional civil service eligibility",
       color: "#5e3023"
     },
+    {
+      name: "Introduction to Front End Development Certificate",
+      year: "2025",
+      image: "/certs/cert1.jpg",
+      description: "from SimpliLearn",
+      color: "#234e70"
+    },
+    {
+      name: "Introduction to Cloud Computing Certificate",
+      year: "2025",
+      image: "/certs/cert2.jpg",
+      description: "from SimpliLearn",
+      color: "#234e70"
+    },
+    {
+      name: "Project Management 101 Certificate",
+      year: "2025",
+      image: "/certs/cert3.jpg",
+      description: "from SimpliLearn",
+      color: "#234e70"
+    },
+    {
+      name: "Python for Beginners Certificate",
+      year: "2025",
+      image: "/certs/cert4.jpg",
+      description: "from SimpliLearn",
+      color: "#234e70"
+    },
+    {
+      name: "Machine Learning Certificate",
+      year: "2025",
+      image: "/certs/cert5.jpg",
+      description: "from SimpliLearn",
+      color: "#234e70"
+    },
+    {
+      name: "Introduction to SQL",
+      year: "2025",
+      image: "/certs/cert6.jpg",
+      description: "from SimpliLearn",
+      color: "#234e70"
+    }
   ];
 
   return (
@@ -153,30 +196,33 @@ function AboutMe() {
               </div>
             </div>
           )}
-          
-          {activeTab === "certifications" && (
-            <div className="certifications-section animate-tab">
-              <h2 className="certifications-heading">Professional Certifications</h2>
-              <div className="certifications-container">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="certification-card" style={{borderLeft: `4px solid ${cert.color}`}}>
-                    <div className="certification-icon" style={{color: cert.color}}>
-                      {cert.icon}
-                    </div>
-                    <div className="certification-details">
-                      <h3 className="certification-name">{cert.name}</h3>
-                      <div className="certification-year-badge" style={{backgroundColor: cert.color}}>
-                        {cert.year}
-                      </div>
-                      <p className="certification-description">{cert.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="certifications-note">
-                <p>Continuous learning and professional development are essential parts of my journey. I'm always seeking new opportunities to expand my knowledge and skills.</p>
-              </div>
-            </div>
+          {certifications.map((cert, index) => (
+  <div key={index} className="certification-card" style={{ borderLeft: `4px solid ${cert.color}` }}>
+    
+
+    <div className="certification-details">
+      <h3 className="certification-name">{cert.name}</h3>
+      <div className="certification-year-badge" style={{ backgroundColor: cert.color }}>
+        {cert.year}
+      </div>
+      <p className="certification-description">{cert.description}</p>
+
+
+      {cert.image && (
+        <a href={cert.image} target="_blank" rel="noopener noreferrer">
+          <img 
+            src={cert.image} 
+            alt={cert.name} 
+            className="certification-image" 
+            style={{ width: '150px', marginTop: '0.5rem', borderRadius: '4px', cursor: 'pointer' }}
+          />
+        </a>
+      )}
+    </div>
+
+  </div>
+)
+
           )}
         </div>
       </div>
